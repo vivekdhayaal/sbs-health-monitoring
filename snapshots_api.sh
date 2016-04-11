@@ -71,6 +71,8 @@ else
 	echo -e "Delete volume $volid failed" >>$1	
 fi
 
+sleep 20
+
 snap_del=1
 eval "$(./create_request.py "https://compute.ind-west-1.internal.jiocloudservices.com/?Action=DeleteSnapshot&SnapshotId=$snapid&Version=2016-03-01")"
 if (($? == 0))

@@ -12,7 +12,7 @@ while :
 
 do
 	rm /tmp/dss.health
-	python ./dss_check.py 2>>/tmp/dss.health
+	python ./dss_check.py &>>/tmp/dss.health
 	if (($? != 0))
 	then
             echo -n "${output}" >> /tmp/dss.health
