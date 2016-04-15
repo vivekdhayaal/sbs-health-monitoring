@@ -1,6 +1,6 @@
 required_status='running'
 loop=true
-inst_id=`eval "$(./create_request.py "https://compute.ind-west-1.internal.jiocloudservices.com/?Action=RunInstances&ImageId=jmi-74710812&KeyName=health_key&InstanceTypeId=c1.medium&BlockDeviceMapping.1.DeleteOnTermination=True&Version=2016-03-01")"|sed -n -e 's/.*<instanceId>\(.*\)<\/instanceId>.*/\1/p'`
+inst_id=`eval "$(./create_request.py "https://compute.ind-west-1.internal.jiocloudservices.com/?Action=RunInstances&ImageId=jmi-74710812&KeyName=health_key&InstanceTypeId=c1.medium&BlockDeviceMapping.1.DeleteOnTermination=True&BlockDeviceMapping.1.DeviceName=/dev/vda&Version=2016-03-01")"|sed -n -e 's/.*<instanceId>\(.*\)<\/instanceId>.*/\1/p'`
 if (($? != 0))
 then
         echo -e "Create instance failed" >>$1
