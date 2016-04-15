@@ -11,7 +11,7 @@ function notify_thru_email()
 {
         cat $2 |mail -s "[PROD]$1" -a "From: sandeep41.kumar@ril.com" sandeep41.kumar@ril.com
 }
-script_sleep_min=3600
+script_sleep_min=10800
 while :
 
 do
