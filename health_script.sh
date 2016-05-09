@@ -38,7 +38,7 @@ checkStatus() {
 		create=0
 		count=20
 	else
-		sleep 1
+		sleep 20
 	        count=$((count+1))
 	fi
 	done
@@ -58,6 +58,7 @@ inst_status='running'
 ###-----------------------------------------------------------------------------
 #Create an instance
 ###-----------------------------------------------------------------------------
+echo -e "\nNEW SESSION STARTED" >>$1
 echo -e "\n*********Create Instance *********" >>$1
 result=`eval "$(./create_request.py "https://compute.ind-west-1.internal.jiocloudservices.com/?Action=RunInstances&ImageId=jmi-74710812&KeyName=test_key&InstanceTypeId=c1.medium&BlockDeviceMapping.1.DeleteOnTermination=True&BlockDeviceMapping.1.DeviceName=/dev/vda&Version=2016-03-01")"`
 inst_id=`echo $result|sed -n -e 's/.*<instanceId>\(.*\)<\/instanceId>.*/\1/p'`
