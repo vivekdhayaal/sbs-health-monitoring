@@ -2,16 +2,16 @@
 #source /home/block_team/client_v2_jcs_scripts/openrc_test
 function notify_thru_email1()
 {
-        cat $2 |mail -s "[PROD]$1" -a "From: jcs.sbsnotifications@zmail.ril.com" shishir.gowda@ril.com chirag.aggarwal@ril.com rahul4.jain@ril.com ravikanth.maddikonda@ril.com vivek.kayarohanam@ril.com sandeep41.kumar@ril.com souvik.ray@ril.com
+        cat $2 |mail -s "[STAGING]$1" -a "From: jcs.sbsnotifications@zmail.ril.com" shishir.gowda@ril.com chirag.aggarwal@ril.com rahul4.jain@ril.com ravikanth.maddikonda@ril.com vivek.kayarohanam@ril.com sandeep41.kumar@ril.com souvik.ray@ril.com
 }
 
 function notify_thru_email()
 {
 	time=$(date +%k%M)
 	if [[ "$time" -ge 1215 ]] && [[ "$time" -le 1218 ]];then
-        	cat $2 |mail -s "[PROD]$1" -a "From: jcs.sbsnotifications@zmail.ril.com" shishir.gowda@ril.com chirag.aggarwal@ril.com rahul4.jain@ril.com ravikanth.maddikonda@ril.com vivek.kayarohanam@ril.com sandeep41.kumar@ril.com souvik.ray@ril.com
+        	cat $2 |mail -s "[STAGING]$1" -a "From: jcs.sbsnotifications@zmail.ril.com" shishir.gowda@ril.com chirag.aggarwal@ril.com rahul4.jain@ril.com ravikanth.maddikonda@ril.com vivek.kayarohanam@ril.com sandeep41.kumar@ril.com souvik.ray@ril.com
 	else
-	        cat $2 |mail -s "[PROD]$1" -a "From: jcs.sbsnotifications@zmail.ril.com" sandeep41.kumar@ril.com chirag.aggarwal@ril.com
+	        cat $2 |mail -s "[STAGING]$1" -a "From: jcs.sbsnotifications@zmail.ril.com" sandeep41.kumar@ril.com chirag.aggarwal@ril.com
 	fi
 }
 script_interval=60
@@ -38,6 +38,8 @@ do
    	      echo -e "\n---Test Scenario---\nCreate Instance I1\nCreate Volume V1\nAttach Volume V1 to instance I1\nCreate base snapshot B1 for volume V1\nCreate incremental snapshot B2 for volume V1\nDetach volume V1\nDelete volume V1\nCreate volume V2 from snapshot B2\nAttach volume V2 to instance I1\nDetach volume V2 from instance I1\nDelete volume V2\nDelete base snapshot B1\nDelete incremental snapshot B2\nDelete instance I1" >> $file_summary
 	      notify_thru_email1 "Instance API daily summary" $file_summary
 	      to_send=0
+	      passCount=0
+	      failCount=0
 	      rm -rf $file_summary
 	    fi
         fi

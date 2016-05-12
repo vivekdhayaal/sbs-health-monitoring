@@ -1,3 +1,6 @@
+compute_endpoint="https://compute.ind-west-1.staging.jiocloudservices.com"
+vol_size=1
+inst_type="c1.medium"
 checkStatus() {
 #####This function is used to check state of a volume/instance/snapshot
 ###Usage
@@ -11,17 +14,17 @@ checkStatus() {
 
 	if (($1 == 0))
 	then
-	result=`eval "$(./create_request.py "https://compute.ind-west-1.internal.jiocloudservices.com/?Action=DescribeVolumes&Version=2016-03-01&VolumeId=$2")"`
+	result=`eval "$(./create_request.py "$compute_endpoint/?Action=DescribeVolumes&Version=2016-03-01&VolumeId=$2")"`
 	status=`echo $result|sed -n -e 's/.*<status>\(.*\)<\/status>.*/\1/p'`
        	echo -e "Describe volume for $2." >> $4  
 	else
 	if (($1 == 1))
 	then
-	result=`eval "$(./create_request.py "https://compute.ind-west-1.internal.jiocloudservices.com/?Action=DescribeInstances&Version=2016-03-01&InstanceId.1=$2")"`
+	result=`eval "$(./create_request.py "$compute_endpoint/?Action=DescribeInstances&Version=2016-03-01&InstanceId.1=$2")"`
 	status=`echo $result|sed -n -e 's/.*<instanceState>\(.*\)<\/instanceState>.*/\1/p'`
        	echo -e "Describe instance for $2." >> $4   
 	else
-	result=`eval "$(./create_request.py "https://compute.ind-west-1.internal.jiocloudservices.com/?Action=DescribeSnapshots&Version=2016-03-01&SnapshotId=$2")"`
+	result=`eval "$(./create_request.py "$compute_endpoint/?Action=DescribeSnapshots&Version=2016-03-01&SnapshotId=$2")"`
 	status=`echo $result|sed -n -e 's/.*<status>\(.*\)<\/status>.*/\1/p'`
        	echo -e "Describe snapshot for $2." >> $4
 	fi
@@ -60,7 +63,7 @@ inst_status='running'
 ###-----------------------------------------------------------------------------
 echo -e "\nNEW SESSION STARTED" >>$1
 echo -e "\n*********Create Instance *********" >>$1
-result=`eval "$(./create_request.py "https://compute.ind-west-1.internal.jiocloudservices.com/?Action=RunInstances&ImageId=jmi-74710812&KeyName=test_key&InstanceTypeId=c1.medium&BlockDeviceMapping.1.DeleteOnTermination=True&BlockDeviceMapping.1.DeviceName=/dev/vda&Version=2016-03-01")"`
+result=`eval "$(./create_request.py "$compute_endpoint/?Action=RunInstances&ImageId=jmi-57bf447e&KeyName=test_key&InstanceTypeId=$inst_type&BlockDeviceMapping.1.DeleteOnTermination=True&BlockDeviceMapping.1.DeviceName=/dev/vda&Version=2016-03-01")"`
 inst_id=`echo $result|sed -n -e 's/.*<instanceId>\(.*\)<\/instanceId>.*/\1/p'`
 if [  -z "$inst_id" ];
 then
@@ -84,7 +87,7 @@ fi
 # create Volume 
 ###-----------------------------------------------------------------------------
 echo -e "\n*********Create Volume *********" >>$1
-result=`eval "$(./create_request.py "https://compute.ind-west-1.internal.jiocloudservices.com/?Action=CreateVolume&Size=1&Version=2016-03-01")"`
+result=`eval "$(./create_request.py "$compute_endpoint/?Action=CreateVolume&Size=$vol_size&Version=2016-03-01")"`
 vol_id=`echo $result|sed -n -e 's/.*<volumeId>\(.*\)<\/volumeId>.*/\1/p'`
 if [  -z "$vol_id" ];
 then
@@ -109,7 +112,7 @@ fi
 #Attach volume to instance
 ###-----------------------------------------------------------------------------
 echo -e "\n*********Attach Volume for volume $vol_id and instance $inst_id*********" >>$1
-result=`eval "$(./create_request.py "https://compute.ind-west-1.internal.jiocloudservices.com/?Action=AttachVolume&InstanceId=$inst_id&VolumeId=$vol_id&Device=/dev/vdb&Version=2016-03-01")"`
+result=`eval "$(./create_request.py "$compute_endpoint/?Action=AttachVolume&InstanceId=$inst_id&VolumeId=$vol_id&Device=/dev/vdb&Version=2016-03-01")"`
 status=`echo $result|sed -n -e 's/.*<status>\(.*\)<\/status>.*/\1/p'`
 if [  -z "$status" ];
 then
@@ -132,7 +135,7 @@ fi
 # CreateSnapshot S1 
 ###-----------------------------------------------------------------------------
 echo -e "\n*********Create snapshot for volume $vol_id*********" >>$1
-result=`eval "$(./create_request.py "https://compute.ind-west-1.internal.jiocloudservices.com/?Action=CreateSnapshot&VolumeId=$vol_id&Version=2016-03-01")"`
+result=`eval "$(./create_request.py "$compute_endpoint/?Action=CreateSnapshot&VolumeId=$vol_id&Version=2016-03-01")"`
 base_snap_id=`echo $result|sed -n -e 's/.*<snapshotId>\(.*\)<\/snapshotId>.*/\1/p'`
 if [  -z "$base_snap_id" ];
 then
@@ -154,7 +157,7 @@ fi
 # CreateSnapshot S2 
 ###-----------------------------------------------------------------------------
 echo -e "\n*********Create snapshot for volume $vol_id********* " >>$1
-result=`eval "$(./create_request.py "https://compute.ind-west-1.internal.jiocloudservices.com/?Action=CreateSnapshot&VolumeId=$vol_id&Version=2016-03-01")"`
+result=`eval "$(./create_request.py "$compute_endpoint/?Action=CreateSnapshot&VolumeId=$vol_id&Version=2016-03-01")"`
 snap_id=`echo $result|sed -n -e 's/.*<snapshotId>\(.*\)<\/snapshotId>.*/\1/p'`
 if [  -z "$snap_id" ];
 then
@@ -176,7 +179,7 @@ fi
 # detach Volume 
 ###-----------------------------------------------------------------------------
 echo -e "\n*********Detach volume $vol_id*********" >>$1
-result=`eval "$(./create_request.py "https://compute.ind-west-1.internal.jiocloudservices.com/?Action=DetachVolume&InstanceId=$inst_id&VolumeId=$vol_id&Device=/dev/vdb&Version=2016-03-01")"`
+result=`eval "$(./create_request.py "$compute_endpoint/?Action=DetachVolume&InstanceId=$inst_id&VolumeId=$vol_id&Device=/dev/vdb&Version=2016-03-01")"`
 status=`echo $result|sed -n -e 's/.*<status>\(.*\)<\/status>.*/\1/p'`
 if [  -z "$status" ];
 then
@@ -198,7 +201,7 @@ fi
 # delete volume
 ###-----------------------------------------------------------------------------
 echo -e "\n*********Delete volume $vol_id*********" >>$1
-result=`eval "$(./create_request.py "https://compute.ind-west-1.internal.jiocloudservices.com/?Action=DeleteVolume&VolumeId=$vol_id&Version=2016-03-01")"`
+result=`eval "$(./create_request.py "$compute_endpoint/?Action=DeleteVolume&VolumeId=$vol_id&Version=2016-03-01")"`
 status=`echo $result|sed -n -e 's/.*<return>\(.*\)<\/return>.*/\1/p'`
 if [  -z "$status" ];
 then
@@ -211,7 +214,7 @@ echo "Deleted volume $vol_id" >> $1
 # describe volume
 ###-----------------------------------------------------------------------------
 sleep 30
-result=`eval "$(./create_request.py "https://compute.ind-west-1.internal.jiocloudservices.com/?Action=DescribeVolumes&VolumeId=$vol_id&Version=2016-03-01")"`
+result=`eval "$(./create_request.py "$compute_endpoint/?Action=DescribeVolumes&VolumeId=$vol_id&Version=2016-03-01")"`
 status=`echo $result|sed -n -e 's/.*<Code>\(.*\)<\/Code>.*/\1/p'`
 if [  -z "$status" ];
 then
@@ -227,7 +230,7 @@ fi
 # create volume from snapshot
 ###-----------------------------------------------------------------------------
 echo -e "\n*********Create volume from snapshot *********" >>$1
-result=`eval "$(./create_request.py "https://compute.ind-west-1.internal.jiocloudservices.com/?Action=CreateVolume&SnapshotId=$snap_id&Version=2016-03-01")"`
+result=`eval "$(./create_request.py "$compute_endpoint/?Action=CreateVolume&SnapshotId=$snap_id&Version=2016-03-01")"`
 vol_id=`echo $result|sed -n -e 's/.*<volumeId>\(.*\)<\/volumeId>.*/\1/p'`
 if [  -z "$vol_id" ];
 then
@@ -249,7 +252,7 @@ fi
 #Attach volume to instance
 ###-----------------------------------------------------------------------------
 echo -e "\n*********Attach volume $vol_id to instance $inst_id*********" >>$1
-result=`eval "$(./create_request.py "https://compute.ind-west-1.internal.jiocloudservices.com/?Action=AttachVolume&InstanceId=$inst_id&VolumeId=$vol_id&Device=/dev/vdb&Version=2016-03-01")"`
+result=`eval "$(./create_request.py "$compute_endpoint/?Action=AttachVolume&InstanceId=$inst_id&VolumeId=$vol_id&Device=/dev/vdb&Version=2016-03-01")"`
 status=`echo $result|sed -n -e 's/.*<status>\(.*\)<\/status>.*/\1/p'`
 if [  -z "$status" ];
 then
@@ -271,7 +274,7 @@ fi
 # detach Volume 
 ###-----------------------------------------------------------------------------
 echo -e "\n*********Detach volume $vol_id from instance $inst_id*********" >>$1
-result=`eval "$(./create_request.py "https://compute.ind-west-1.internal.jiocloudservices.com/?Action=DetachVolume&InstanceId=$inst_id&VolumeId=$vol_id&Device=/dev/vdb&Version=2016-03-01")"`
+result=`eval "$(./create_request.py "$compute_endpoint/?Action=DetachVolume&InstanceId=$inst_id&VolumeId=$vol_id&Device=/dev/vdb&Version=2016-03-01")"`
 status=`echo $result|sed -n -e 's/.*<status>\(.*\)<\/status>.*/\1/p'`
 if [  -z "$status" ];
 then
@@ -293,7 +296,7 @@ echo -e "Detached volume $vol_id" >>$1
 # delete volume
 ###-----------------------------------------------------------------------------
 echo -e "\n*********Delete volume $vol_id*********" >>$1
-result=`eval "$(./create_request.py "https://compute.ind-west-1.internal.jiocloudservices.com/?Action=DeleteVolume&VolumeId=$vol_id&Version=2016-03-01")"`
+result=`eval "$(./create_request.py "$compute_endpoint/?Action=DeleteVolume&VolumeId=$vol_id&Version=2016-03-01")"`
 status=`echo $result|sed -n -e 's/.*<return>\(.*\)<\/return>.*/\1/p'`
 if [  -z "$status" ];
 then
@@ -310,7 +313,7 @@ fi
 # describe volume
 ###-----------------------------------------------------------------------------
 sleep 30
-result=`eval "$(./create_request.py "https://compute.ind-west-1.internal.jiocloudservices.com/?Action=DescribeVolumes&VolumeId=$vol_id&Version=2016-03-01")"`
+result=`eval "$(./create_request.py "$compute_endpoint/?Action=DescribeVolumes&VolumeId=$vol_id&Version=2016-03-01")"`
 status=`echo $result|sed -n -e 's/.*<Code>\(.*\)<\/Code>.*/\1/p'`
 if [  -z "$status" ];
 then
@@ -326,7 +329,7 @@ echo -e "Deleted volume $vol_id">>$1
 # DeleteSnapshot base snapshot 
 ###-----------------------------------------------------------------------------
 echo -e "\n*********Delete snapshot $base_snap_id*********" >>$1
-result=`eval "$(./create_request.py "https://compute.ind-west-1.internal.jiocloudservices.com/?Action=DeleteSnapshot&SnapshotId=$base_snap_id&Version=2016-03-01")"`
+result=`eval "$(./create_request.py "$compute_endpoint/?Action=DeleteSnapshot&SnapshotId=$base_snap_id&Version=2016-03-01")"`
 status=`echo $result|sed -n -e 's/.*<return>\(.*\)<\/return>.*/\1/p'`
 if [  -z "$status" ];
 then
@@ -342,7 +345,7 @@ fi
 # describe snapshot 
 ###-----------------------------------------------------------------------------
 sleep 60
-result=`eval "$(./create_request.py "https://compute.ind-west-1.internal.jiocloudservices.com/?Action=DescribeSnapshots&SnapshotId=$base_snap_id&Version=2016-03-01")"`
+result=`eval "$(./create_request.py "$compute_endpoint/?Action=DescribeSnapshots&SnapshotId=$base_snap_id&Version=2016-03-01")"`
 status=`echo $result|sed -n -e 's/.*<Code>\(.*\)<\/Code>.*/\1/p'`
 if [  -z "$status" ];
 then
@@ -359,7 +362,7 @@ echo -e "Deleted snapshot $base_snap_id " >>$1
 # DeleteSnapshot S1 
 ###-----------------------------------------------------------------------------
 echo -e "\n*********Delete snapshot $snap_id*********" >>$1
-result=`eval "$(./create_request.py "https://compute.ind-west-1.internal.jiocloudservices.com/?Action=DeleteSnapshot&SnapshotId=$snap_id&Version=2016-03-01")"`
+result=`eval "$(./create_request.py "$compute_endpoint/?Action=DeleteSnapshot&SnapshotId=$snap_id&Version=2016-03-01")"`
 status=`echo $result|sed -n -e 's/.*<return>\(.*\)<\/return>.*/\1/p'`
 if [  -z "$status" ];
 then
@@ -375,7 +378,7 @@ fi
 # describe snapshot 
 ###-----------------------------------------------------------------------------
 sleep 60
-result=`eval "$(./create_request.py "https://compute.ind-west-1.internal.jiocloudservices.com/?Action=DescribeSnapshots&SnapshotId=$snap_id&Version=2016-03-01")"`
+result=`eval "$(./create_request.py "$compute_endpoint/?Action=DescribeSnapshots&SnapshotId=$snap_id&Version=2016-03-01")"`
 status=`echo $result|sed -n -e 's/.*<Code>\(.*\)<\/Code>.*/\1/p'`
 if [  -z "$status" ];
 then
@@ -392,7 +395,7 @@ echo -e "Deleted snapshot $snap_id " >>$1
 # DeleteInstance 
 ###-----------------------------------------------------------------------------
 echo -e "\n*********Delete instance $inst_id*********" >>$1
-result=`eval "$(./create_request.py "https://compute.ind-west-1.internal.jiocloudservices.com/?Action=TerminateInstances&InstanceId.1=$inst_id&Version=2016-03-01")"`
+result=`eval "$(./create_request.py "$compute_endpoint/?Action=TerminateInstances&InstanceId.1=$inst_id&Version=2016-03-01")"`
 status=`echo $result|sed -n -e 's/.*<currentState>\(.*\)<\/currentState>.*/\1/p'`
 if [  -z "$status" ];
 then
@@ -409,7 +412,7 @@ echo "Shutting down instance $inst_id" >> $1
 # describe  
 ###-----------------------------------------------------------------------------
 sleep 30
-result=`eval "$(./create_request.py "https://compute.ind-west-1.internal.jiocloudservices.com/?Action=DescribeInstances&InstanceId.1=$inst_id&Version=2016-03-01")"`
+result=`eval "$(./create_request.py "$compute_endpoint/?Action=DescribeInstances&InstanceId.1=$inst_id&Version=2016-03-01")"`
 status=`echo $result|sed -n -e 's/.*<Code>\(.*\)<\/Code>.*/\1/p'`
 if [  -z "$status" ];
 then
