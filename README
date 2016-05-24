@@ -1,0 +1,19 @@
+I have added the following scripts to run instance health scripts and make sure to define JCS_ACCESS_KEY and JCS_SECRET_KEY before running these scripts.
+For setting up instance health script, we need to just change the variables in sbs_variables.sh, set the platform in run_sbs_health.sh like STAGING or PROD and then run "run_sbs_health.sh"
+
+Description for each script:
+
+run_sbs_health.sh: It uses sbs_health.sh to run the test case scenario and send the email notifications. It also sends a daily summary of pass/fail counts to all team members and report all the failures to all. It runs sbs_health.sh after every minute and send the success status to interested team members. 
+
+sbs_functions.sh: It contains all the necessary functions to create/delete Volume/Snapshot/Instance and attach/detach volume. For this, we needto define the variables in sbs_variables.sh
+
+sbs_health.sh: It uses the functions in sbs_functions.sh to create a test scenario
+
+sbs_variables.sh: Here we need to define compute_endpoint, vol_size, and other variables required.
+
+
+Following are the 2 scripts to cleanup resources in case of instance failures:
+
+sbs_clean.sh: It is used to clean up resources for a single failure. For a failure, a cleanup file is automatically created as /tmp/<date>/<time>. We can directly specify this file as a parameter to this script e.g. ./sbs_clean.sh /tmp/16-05-20/15-25-14 
+
+sbs_clean_all.sh: It can be used to clean all resources for all failures of a day e.g. ./sbs_clean_all.sh /tmp/16-05-20
