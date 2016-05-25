@@ -5,7 +5,7 @@
 
 IFS=$'\n'
 content=( $(cat $1))
-content_length=${#lines[@]}
+content_length=${#content[@]}
 vol_index=0
 snap_index=0
 detach_index=0
