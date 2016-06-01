@@ -1,0 +1,1305 @@
+cmds[o] CreateVolume
+cmds[1] DeleteVolume
+Waiting for createVolume response to get volumeId
+Waiting for createVolume response to get volumeId
+t0stdout=====: t0line: '--------------------------------------------------'
+t0line: {
+t0line:     "CreateVolumeResponse": {
+t0line:         "@xmlns": "http://compute.jiocloudservices.com/doc/2016-03-01/", 
+t0line:         "attachmentSet": null, 
+t0line:         "createTime": "2016-05-26T10:15:32.090651", 
+t0line:         "requestId": "req-45962b15-6820-451d-8fe9-2a99536f9473", 
+t0line:         "size": "1", 
+t0line:         "snapshotId": null, 
+t0line:         "status": "creating", 
+t0line:         "volumeId": "fbeb12fa-da61-44e2-bcf6-7483bb8cf2ba"
+t0line:     }
+t0line: }
+t0line: 
+t0line: 
+t0line: Request successfully executed !
+t0line: '--------------------------------------------------'
+t0stderr=====: t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+t0  InsecurePlatformWarning
+t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/connectionpool.py:768: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+t0  InsecureRequestWarning)
+
+volumeId fbeb12fa-da61-44e2-bcf6-7483bb8cf2ba
+t2stdout=====: t2line: '--------------------------------------------------'
+t2line: {
+t2line:     "DeleteVolumeResponse": {
+t2line:         "@xmlns": "http://compute.jiocloudservices.com/doc/2016-03-01/", 
+t2line:         "requestId": "req-b444b9f6-5457-4c7a-80e2-9311ee8590e5", 
+t2line:         "return": "true"
+t2line:     }
+t2line: }
+t2line: 
+t2line: 
+t2line: Request successfully executed !
+t2line: '--------------------------------------------------'
+t2stderr=====: t2/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+t2  InsecurePlatformWarning
+t2/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/connectionpool.py:768: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+t2  InsecureRequestWarning)
+
+Waiting for vol cleanup thread to complete
+Waiting for vol cleanup thread to complete
+tnstdout=====: tnline: Exception 404 thrown! Status code:
+tnline: Error content:  {
+tnline:     "Response": {
+tnline:         "Errors": {
+tnline:             "Error": {
+tnline:                 "Code": "InvalidVolume.NotFound", 
+tnline:                 "Message": "The volume 'fbeb12fa-da61-44e2-bcf6-7483bb8cf2ba' does not exist."
+tnline:             }
+tnline:         }, 
+tnline:         "RequestID": "req-5548d9a6-a27f-4942-be71-e8763b0fbaf4"
+tnline:     }
+tnline: }
+tnline: Refer to, jcs --help
+tnstderr=====: tn/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+tn  InsecurePlatformWarning
+tn/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/connectionpool.py:768: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+tn  InsecureRequestWarning)
+
+Current Test run #1 complete; Moving to nexti run, if any
+Current Test all runs complete; Moving to next test, if any
+cmds[o] CreateVolume
+cmds[1] DeleteVolume
+Waiting for createVolume response to get volumeId
+Waiting for createVolume response to get volumeId
+t0stdout=====: t0line: '--------------------------------------------------'
+t0line: {
+t0line:     "CreateVolumeResponse": {
+t0line:         "@xmlns": "http://compute.jiocloudservices.com/doc/2016-03-01/", 
+t0line:         "attachmentSet": null, 
+t0line:         "createTime": "2016-05-26T10:15:38.892186", 
+t0line:         "requestId": "req-c4b5944f-30aa-4fd2-98cd-c561f7040875", 
+t0line:         "size": "1", 
+t0line:         "snapshotId": null, 
+t0line:         "status": "creating", 
+t0line:         "volumeId": "9508d4f4-9c7d-41cd-9f15-89ec47bd1031"
+t0line:     }
+t0line: }
+t0line: 
+t0line: 
+t0line: Request successfully executed !
+t0line: '--------------------------------------------------'
+t0stderr=====: t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+t0  InsecurePlatformWarning
+t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/connectionpool.py:768: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+t0  InsecureRequestWarning)
+
+volumeId 9508d4f4-9c7d-41cd-9f15-89ec47bd1031
+Waiting for createSnapshot response to get snapshotId
+Waiting for createSnapshot response to get snapshotId
+Waiting for createSnapshot response to get snapshotId
+t0stdout=====: t0line: '--------------------------------------------------'
+t0line: {
+t0line:     "CreateSnapshotResponse": {
+t0line:         "@xmlns": "http://compute.jiocloudservices.com/doc/2016-03-01/", 
+t0line:         "requestId": "req-6ee30d7c-ba8e-43de-b0cb-3b792fa53fc6", 
+t0line:         "snapshotId": "2e9a0559-8104-4312-b52e-e3df078506dc", 
+t0line:         "startTime": "2016-05-26T10:14:33.000000", 
+t0line:         "status": "pending", 
+t0line:         "volumeId": "9508d4f4-9c7d-41cd-9f15-89ec47bd1031", 
+t0line:         "volumeSize": "1"
+t0line:     }
+t0line: }
+t0line: 
+t0line: 
+t0line: Request successfully executed !
+t0line: '--------------------------------------------------'
+t0stderr=====: t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+t0  InsecurePlatformWarning
+t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/connectionpool.py:768: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+t0  InsecureRequestWarning)
+
+snapshotId 2e9a0559-8104-4312-b52e-e3df078506dc
+Waiting for resource to become available
+Waiting for resource to become available
+t0stdout=====: t0line: '--------------------------------------------------'
+t0line: {
+t0line:     "DescribeSnapshotsResponse": {
+t0line:         "@xmlns": "http://compute.jiocloudservices.com/doc/2016-03-01/", 
+t0line:         "requestId": "req-24285786-d351-4637-af75-c99fbf9cfae2", 
+t0line:         "snapshotSet": {
+t0line:             "item": {
+t0line:                 "snapshotId": "2e9a0559-8104-4312-b52e-e3df078506dc", 
+t0line:                 "startTime": "2016-05-26T10:14:33.000000", 
+t0line:                 "status": "pending", 
+t0line:                 "volumeId": "9508d4f4-9c7d-41cd-9f15-89ec47bd1031", 
+t0line:                 "volumeSize": "1"
+t0line:             }
+t0line:         }
+t0line:     }
+t0line: }
+t0line: 
+t0line: 
+t0line: Request successfully executed !
+t0line: '--------------------------------------------------'
+t0stderr=====: t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+t0  InsecurePlatformWarning
+t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/connectionpool.py:768: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+t0  InsecureRequestWarning)
+
+status pending
+Waiting for resource to become available
+Waiting for resource to become available
+t0stdout=====: t0line: '--------------------------------------------------'
+t0line: {
+t0line:     "DescribeSnapshotsResponse": {
+t0line:         "@xmlns": "http://compute.jiocloudservices.com/doc/2016-03-01/", 
+t0line:         "requestId": "req-707a8403-a952-4051-b0fb-825ec8352c7f", 
+t0line:         "snapshotSet": {
+t0line:             "item": {
+t0line:                 "snapshotId": "2e9a0559-8104-4312-b52e-e3df078506dc", 
+t0line:                 "startTime": "2016-05-26T10:14:33.000000", 
+t0line:                 "status": "pending", 
+t0line:                 "volumeId": "9508d4f4-9c7d-41cd-9f15-89ec47bd1031", 
+t0line:                 "volumeSize": "1"
+t0line:             }
+t0line:         }
+t0line:     }
+t0line: }
+t0line: 
+t0line: 
+t0line: Request successfully executed !
+t0line: '--------------------------------------------------'
+t0stderr=====: t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+t0  InsecurePlatformWarning
+t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/connectionpool.py:768: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+t0  InsecureRequestWarning)
+
+status pending
+Waiting for resource to become available
+Waiting for resource to become available
+t0stdout=====: t0line: '--------------------------------------------------'
+t0line: {
+t0line:     "DescribeSnapshotsResponse": {
+t0line:         "@xmlns": "http://compute.jiocloudservices.com/doc/2016-03-01/", 
+t0line:         "requestId": "req-bea3329b-0eeb-4e28-b0ef-01de35927aaa", 
+t0line:         "snapshotSet": {
+t0line:             "item": {
+t0line:                 "snapshotId": "2e9a0559-8104-4312-b52e-e3df078506dc", 
+t0line:                 "startTime": "2016-05-26T10:14:33.000000", 
+t0line:                 "status": "pending", 
+t0line:                 "volumeId": "9508d4f4-9c7d-41cd-9f15-89ec47bd1031", 
+t0line:                 "volumeSize": "1"
+t0line:             }
+t0line:         }
+t0line:     }
+t0line: }
+t0line: 
+t0line: 
+t0line: Request successfully executed !
+t0line: '--------------------------------------------------'
+t0stderr=====: t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+t0  InsecurePlatformWarning
+t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/connectionpool.py:768: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+t0  InsecureRequestWarning)
+
+status pending
+Waiting for resource to become available
+Waiting for resource to become available
+t0stdout=====: t0line: '--------------------------------------------------'
+t0line: {
+t0line:     "DescribeSnapshotsResponse": {
+t0line:         "@xmlns": "http://compute.jiocloudservices.com/doc/2016-03-01/", 
+t0line:         "requestId": "req-52f91b49-09d7-4ab8-a84b-1c18dfab0383", 
+t0line:         "snapshotSet": {
+t0line:             "item": {
+t0line:                 "snapshotId": "2e9a0559-8104-4312-b52e-e3df078506dc", 
+t0line:                 "startTime": "2016-05-26T10:15:49.000000", 
+t0line:                 "status": "completed", 
+t0line:                 "volumeId": "9508d4f4-9c7d-41cd-9f15-89ec47bd1031", 
+t0line:                 "volumeSize": "1"
+t0line:             }
+t0line:         }
+t0line:     }
+t0line: }
+t0line: 
+t0line: 
+t0line: Request successfully executed !
+t0line: '--------------------------------------------------'
+t0stderr=====: t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+t0  InsecurePlatformWarning
+t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/connectionpool.py:768: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+t0  InsecureRequestWarning)
+
+status completed
+Waiting for createVolume response to get volumeId
+Waiting for createVolume response to get volumeId
+Waiting for createVolume response to get volumeId
+Waiting for createVolume response to get volumeId
+t0stdout=====: t0line: '--------------------------------------------------'
+t0line: {
+t0line:     "CreateVolumeResponse": {
+t0line:         "@xmlns": "http://compute.jiocloudservices.com/doc/2016-03-01/", 
+t0line:         "attachmentSet": null, 
+t0line:         "createTime": "2016-05-26T10:14:43.000000", 
+t0line:         "requestId": "req-47579470-9530-49a2-b5f2-f334615f927b", 
+t0line:         "size": "1", 
+t0line:         "snapshotId": "2e9a0559-8104-4312-b52e-e3df078506dc", 
+t0line:         "status": "creating", 
+t0line:         "volumeId": "7573c046-8fba-45e3-b128-b21041e3efa5"
+t0line:     }
+t0line: }
+t0line: 
+t0line: 
+t0line: Request successfully executed !
+t0line: '--------------------------------------------------'
+t0stderr=====: t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+t0  InsecurePlatformWarning
+t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/connectionpool.py:768: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+t0  InsecureRequestWarning)
+
+volumeId 7573c046-8fba-45e3-b128-b21041e3efa5
+t2stdout=====: t2line: Exception 400 thrown! Status code:
+t2line: Error content:  {
+t2line:     "Response": {
+t2line:         "Errors": {
+t2line:             "Error": {
+t2line:                 "Code": "UnsupportedOperation", 
+t2line:                 "Message": "The specified request includes an unsupported operation."
+t2line:             }
+t2line:         }, 
+t2line:         "RequestID": "req-c3cf14be-9c52-4b91-be4a-f4c2a237e955"
+t2line:     }
+t2line: }
+t2line: Refer to, jcs --help
+t2stderr=====: t2/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+t2  InsecurePlatformWarning
+t2/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/connectionpool.py:768: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+t2  InsecureRequestWarning)
+
+Waiting for vol cleanup thread to complete
+Waiting for vol cleanup thread to complete
+tnstdout=====: tnline: '--------------------------------------------------'
+tnline: {
+tnline:     "DeleteVolumeResponse": {
+tnline:         "@xmlns": "http://compute.jiocloudservices.com/doc/2016-03-01/", 
+tnline:         "requestId": "req-9336d3fd-9b48-4059-a887-40b70f5089c3", 
+tnline:         "return": "true"
+tnline:     }
+tnline: }
+tnline: 
+tnline: 
+tnline: Request successfully executed !
+tnline: '--------------------------------------------------'
+tnstderr=====: tn/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+tn  InsecurePlatformWarning
+tn/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/connectionpool.py:768: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+tn  InsecureRequestWarning)
+
+Waiting for snap cleanup thread to complete
+Waiting for snap cleanup thread to complete
+Waiting for snap cleanup thread to complete
+tnstdout=====: tnline: '--------------------------------------------------'
+tnline: {
+tnline:     "DeleteSnapshotResponse": {
+tnline:         "@xmlns": "http://compute.jiocloudservices.com/doc/2016-03-01/", 
+tnline:         "requestId": "req-5081a49b-6b68-4673-b09b-64be3c703f53", 
+tnline:         "return": "true"
+tnline:     }
+tnline: }
+tnline: 
+tnline: 
+tnline: Request successfully executed !
+tnline: '--------------------------------------------------'
+tnstderr=====: tn/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+tn  InsecurePlatformWarning
+tn/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/connectionpool.py:768: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+tn  InsecureRequestWarning)
+
+Current Test run #1 complete; Moving to nexti run, if any
+Current Test all runs complete; Moving to next test, if any
+cmds[o] DeleteVolume
+cmds[1] DeleteVolume
+Waiting for createVolume response to get volumeId
+Waiting for createVolume response to get volumeId
+t0stdout=====: t0line: '--------------------------------------------------'
+t0line: {
+t0line:     "CreateVolumeResponse": {
+t0line:         "@xmlns": "http://compute.jiocloudservices.com/doc/2016-03-01/", 
+t0line:         "attachmentSet": null, 
+t0line:         "createTime": "2016-05-26T10:16:04.163070", 
+t0line:         "requestId": "req-a2fbdbad-afdb-4a96-9e36-6f35a34f300a", 
+t0line:         "size": "1", 
+t0line:         "snapshotId": null, 
+t0line:         "status": "creating", 
+t0line:         "volumeId": "078b50e5-d76b-44c4-8f09-9176c16b77a1"
+t0line:     }
+t0line: }
+t0line: 
+t0line: 
+t0line: Request successfully executed !
+t0line: '--------------------------------------------------'
+t0stderr=====: t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+t0  InsecurePlatformWarning
+t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/connectionpool.py:768: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+t0  InsecureRequestWarning)
+
+volumeId 078b50e5-d76b-44c4-8f09-9176c16b77a1
+Waiting for resource to become available
+Waiting for resource to become available
+t0stdout=====: t0line: '--------------------------------------------------'
+t0line: {
+t0line:     "DescribeVolumesResponse": {
+t0line:         "@xmlns": "http://compute.jiocloudservices.com/doc/2016-03-01/", 
+t0line:         "requestId": "req-50f08d43-a4e5-45e7-9878-352a18007b3d", 
+t0line:         "volumeSet": {
+t0line:             "item": {
+t0line:                 "attachmentSet": null, 
+t0line:                 "createTime": "2016-05-26T10:16:04.000000", 
+t0line:                 "size": "1", 
+t0line:                 "snapshotId": null, 
+t0line:                 "status": "available", 
+t0line:                 "volumeId": "078b50e5-d76b-44c4-8f09-9176c16b77a1"
+t0line:             }
+t0line:         }
+t0line:     }
+t0line: }
+t0line: 
+t0line: 
+t0line: Request successfully executed !
+t0line: '--------------------------------------------------'
+t0stderr=====: t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+t0  InsecurePlatformWarning
+t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/connectionpool.py:768: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+t0  InsecureRequestWarning)
+
+status available
+t1stdout=====: t1line: '--------------------------------------------------'
+t1line: {
+t1line:     "DeleteVolumeResponse": {
+t1line:         "@xmlns": "http://compute.jiocloudservices.com/doc/2016-03-01/", 
+t1line:         "requestId": "req-50a3ced8-4d25-4126-b051-1b04be7160e1", 
+t1line:         "return": "true"
+t1line:     }
+t1line: }
+t1line: 
+t1line: 
+t1line: Request successfully executed !
+t1line: '--------------------------------------------------'
+t1stderr=====: t1/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+t1  InsecurePlatformWarning
+t1/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/connectionpool.py:768: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+t1  InsecureRequestWarning)
+
+t2stdout=====: t2line: Exception 400 thrown! Status code:
+t2line: Error content:  {
+t2line:     "Response": {
+t2line:         "Errors": {
+t2line:             "Error": {
+t2line:                 "Code": "UnsupportedOperation", 
+t2line:                 "Message": "The specified request includes an unsupported operation."
+t2line:             }
+t2line:         }, 
+t2line:         "RequestID": "req-d652b775-be01-4d86-a1ce-63f837c3a268"
+t2line:     }
+t2line: }
+t2line: Refer to, jcs --help
+t2stderr=====: t2/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+t2  InsecurePlatformWarning
+t2/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/connectionpool.py:768: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+t2  InsecureRequestWarning)
+
+Waiting for vol cleanup thread to complete
+Waiting for vol cleanup thread to complete
+tnstdout=====: tnline: Exception 404 thrown! Status code:
+tnline: Error content:  {
+tnline:     "Response": {
+tnline:         "Errors": {
+tnline:             "Error": {
+tnline:                 "Code": "InvalidVolume.NotFound", 
+tnline:                 "Message": "The volume '078b50e5-d76b-44c4-8f09-9176c16b77a1' does not exist."
+tnline:             }
+tnline:         }, 
+tnline:         "RequestID": "req-6b371280-ff33-4561-b354-f8fb58ec4063"
+tnline:     }
+tnline: }
+tnline: Refer to, jcs --help
+tnstderr=====: tn/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+tn  InsecurePlatformWarning
+tn/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/connectionpool.py:768: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+tn  InsecureRequestWarning)
+
+Current Test run #1 complete; Moving to nexti run, if any
+Current Test all runs complete; Moving to next test, if any
+cmds[o] DeleteVolume
+cmds[1] DeleteVolume
+Waiting for createVolume response to get volumeId
+Waiting for createVolume response to get volumeId
+t0stdout=====: t0line: '--------------------------------------------------'
+t0line: {
+t0line:     "CreateVolumeResponse": {
+t0line:         "@xmlns": "http://compute.jiocloudservices.com/doc/2016-03-01/", 
+t0line:         "attachmentSet": null, 
+t0line:         "createTime": "2016-05-26T10:15:04.872714", 
+t0line:         "requestId": "req-26db96d6-1f36-4755-a4f5-b45b68fa843d", 
+t0line:         "size": "1", 
+t0line:         "snapshotId": null, 
+t0line:         "status": "creating", 
+t0line:         "volumeId": "09a5a21e-6ea7-44cf-922f-d272bea10524"
+t0line:     }
+t0line: }
+t0line: 
+t0line: 
+t0line: Request successfully executed !
+t0line: '--------------------------------------------------'
+t0stderr=====: t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+t0  InsecurePlatformWarning
+t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/connectionpool.py:768: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+t0  InsecureRequestWarning)
+
+volumeId 09a5a21e-6ea7-44cf-922f-d272bea10524
+Waiting for createSnapshot response to get snapshotId
+Waiting for createSnapshot response to get snapshotId
+Waiting for createSnapshot response to get snapshotId
+t0stdout=====: t0line: '--------------------------------------------------'
+t0line: {
+t0line:     "CreateSnapshotResponse": {
+t0line:         "@xmlns": "http://compute.jiocloudservices.com/doc/2016-03-01/", 
+t0line:         "requestId": "req-b7438e92-245b-4a88-aeec-4ce2dee1a552", 
+t0line:         "snapshotId": "b642d6da-df6f-4c21-9bd6-14a5383cf5bf", 
+t0line:         "startTime": "2016-05-26T10:15:07.000000", 
+t0line:         "status": "pending", 
+t0line:         "volumeId": "09a5a21e-6ea7-44cf-922f-d272bea10524", 
+t0line:         "volumeSize": "1"
+t0line:     }
+t0line: }
+t0line: 
+t0line: 
+t0line: Request successfully executed !
+t0line: '--------------------------------------------------'
+t0stderr=====: t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+t0  InsecurePlatformWarning
+t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/connectionpool.py:768: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+t0  InsecureRequestWarning)
+
+snapshotId b642d6da-df6f-4c21-9bd6-14a5383cf5bf
+Waiting for resource to become available
+Waiting for resource to become available
+t0stdout=====: t0line: '--------------------------------------------------'
+t0line: {
+t0line:     "DescribeSnapshotsResponse": {
+t0line:         "@xmlns": "http://compute.jiocloudservices.com/doc/2016-03-01/", 
+t0line:         "requestId": "req-74153459-b726-4146-b788-0987972d7bb2", 
+t0line:         "snapshotSet": {
+t0line:             "item": {
+t0line:                 "snapshotId": "b642d6da-df6f-4c21-9bd6-14a5383cf5bf", 
+t0line:                 "startTime": "2016-05-26T10:15:07.000000", 
+t0line:                 "status": "pending", 
+t0line:                 "volumeId": "09a5a21e-6ea7-44cf-922f-d272bea10524", 
+t0line:                 "volumeSize": "1"
+t0line:             }
+t0line:         }
+t0line:     }
+t0line: }
+t0line: 
+t0line: 
+t0line: Request successfully executed !
+t0line: '--------------------------------------------------'
+t0stderr=====: t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+t0  InsecurePlatformWarning
+t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/connectionpool.py:768: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+t0  InsecureRequestWarning)
+
+status pending
+Waiting for resource to become available
+Waiting for resource to become available
+t0stdout=====: t0line: '--------------------------------------------------'
+t0line: {
+t0line:     "DescribeSnapshotsResponse": {
+t0line:         "@xmlns": "http://compute.jiocloudservices.com/doc/2016-03-01/", 
+t0line:         "requestId": "req-63647df4-88d8-4289-8324-fec3787c9a5d", 
+t0line:         "snapshotSet": {
+t0line:             "item": {
+t0line:                 "snapshotId": "b642d6da-df6f-4c21-9bd6-14a5383cf5bf", 
+t0line:                 "startTime": "2016-05-26T10:15:07.000000", 
+t0line:                 "status": "pending", 
+t0line:                 "volumeId": "09a5a21e-6ea7-44cf-922f-d272bea10524", 
+t0line:                 "volumeSize": "1"
+t0line:             }
+t0line:         }
+t0line:     }
+t0line: }
+t0line: 
+t0line: 
+t0line: Request successfully executed !
+t0line: '--------------------------------------------------'
+t0stderr=====: t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+t0  InsecurePlatformWarning
+t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/connectionpool.py:768: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+t0  InsecureRequestWarning)
+
+status pending
+Waiting for resource to become available
+Waiting for resource to become available
+t0stdout=====: t0line: '--------------------------------------------------'
+t0line: {
+t0line:     "DescribeSnapshotsResponse": {
+t0line:         "@xmlns": "http://compute.jiocloudservices.com/doc/2016-03-01/", 
+t0line:         "requestId": "req-0d1e9e65-1c00-4ca7-922c-b2d75089e913", 
+t0line:         "snapshotSet": {
+t0line:             "item": {
+t0line:                 "snapshotId": "b642d6da-df6f-4c21-9bd6-14a5383cf5bf", 
+t0line:                 "startTime": "2016-05-26T10:15:07.000000", 
+t0line:                 "status": "pending", 
+t0line:                 "volumeId": "09a5a21e-6ea7-44cf-922f-d272bea10524", 
+t0line:                 "volumeSize": "1"
+t0line:             }
+t0line:         }
+t0line:     }
+t0line: }
+t0line: 
+t0line: 
+t0line: Request successfully executed !
+t0line: '--------------------------------------------------'
+t0stderr=====: t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+t0  InsecurePlatformWarning
+t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/connectionpool.py:768: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+t0  InsecureRequestWarning)
+
+status pending
+Waiting for resource to become available
+Waiting for resource to become available
+t0stdout=====: t0line: '--------------------------------------------------'
+t0line: {
+t0line:     "DescribeSnapshotsResponse": {
+t0line:         "@xmlns": "http://compute.jiocloudservices.com/doc/2016-03-01/", 
+t0line:         "requestId": "req-a356e3f4-8838-40b6-91c1-e33e971f28ad", 
+t0line:         "snapshotSet": {
+t0line:             "item": {
+t0line:                 "snapshotId": "b642d6da-df6f-4c21-9bd6-14a5383cf5bf", 
+t0line:                 "startTime": "2016-05-26T10:16:22.000000", 
+t0line:                 "status": "completed", 
+t0line:                 "volumeId": "09a5a21e-6ea7-44cf-922f-d272bea10524", 
+t0line:                 "volumeSize": "1"
+t0line:             }
+t0line:         }
+t0line:     }
+t0line: }
+t0line: 
+t0line: 
+t0line: Request successfully executed !
+t0line: '--------------------------------------------------'
+t0stderr=====: t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+t0  InsecurePlatformWarning
+t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/connectionpool.py:768: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+t0  InsecureRequestWarning)
+
+status completed
+Waiting for createVolume response to get volumeId
+Waiting for createVolume response to get volumeId
+Waiting for createVolume response to get volumeId
+Waiting for createVolume response to get volumeId
+t0stdout=====: t0line: '--------------------------------------------------'
+t0line: {
+t0line:     "CreateVolumeResponse": {
+t0line:         "@xmlns": "http://compute.jiocloudservices.com/doc/2016-03-01/", 
+t0line:         "attachmentSet": null, 
+t0line:         "createTime": "2016-05-26T10:15:17.000000", 
+t0line:         "requestId": "req-c4ad562d-ecd9-406e-9669-06dd65f612aa", 
+t0line:         "size": "1", 
+t0line:         "snapshotId": "b642d6da-df6f-4c21-9bd6-14a5383cf5bf", 
+t0line:         "status": "creating", 
+t0line:         "volumeId": "dfe9297c-54bc-4b1c-aff5-e13bda87ac5b"
+t0line:     }
+t0line: }
+t0line: 
+t0line: 
+t0line: Request successfully executed !
+t0line: '--------------------------------------------------'
+t0stderr=====: t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+t0  InsecurePlatformWarning
+t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/connectionpool.py:768: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+t0  InsecureRequestWarning)
+
+volumeId dfe9297c-54bc-4b1c-aff5-e13bda87ac5b
+Waiting for resource to become available
+Waiting for resource to become available
+t0stdout=====: t0line: '--------------------------------------------------'
+t0line: {
+t0line:     "DescribeVolumesResponse": {
+t0line:         "@xmlns": "http://compute.jiocloudservices.com/doc/2016-03-01/", 
+t0line:         "requestId": "req-a8ef5235-7d41-4db2-9427-e79352ecf138", 
+t0line:         "volumeSet": {
+t0line:             "item": {
+t0line:                 "attachmentSet": null, 
+t0line:                 "createTime": "2016-05-26T10:15:17.000000", 
+t0line:                 "size": "1", 
+t0line:                 "snapshotId": "b642d6da-df6f-4c21-9bd6-14a5383cf5bf", 
+t0line:                 "status": "available", 
+t0line:                 "volumeId": "dfe9297c-54bc-4b1c-aff5-e13bda87ac5b"
+t0line:             }
+t0line:         }
+t0line:     }
+t0line: }
+t0line: 
+t0line: 
+t0line: Request successfully executed !
+t0line: '--------------------------------------------------'
+t0stderr=====: t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+t0  InsecurePlatformWarning
+t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/connectionpool.py:768: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+t0  InsecureRequestWarning)
+
+status available
+t2stdout=====: t2line: '--------------------------------------------------'
+t2line: {
+t2line:     "DeleteVolumeResponse": {
+t2line:         "@xmlns": "http://compute.jiocloudservices.com/doc/2016-03-01/", 
+t2line:         "requestId": "req-ea210e98-07b2-446e-ba43-11a83f17fd30", 
+t2line:         "return": "true"
+t2line:     }
+t2line: }
+t2line: 
+t2line: 
+t2line: Request successfully executed !
+t2line: '--------------------------------------------------'
+t2stderr=====: t2/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+t2  InsecurePlatformWarning
+t2/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/connectionpool.py:768: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+t2  InsecureRequestWarning)
+
+t1stdout=====: t1line: Exception 400 thrown! Status code:
+t1line: Error content:  {
+t1line:     "Response": {
+t1line:         "Errors": {
+t1line:             "Error": {
+t1line:                 "Code": "UnsupportedOperation", 
+t1line:                 "Message": "The specified request includes an unsupported operation."
+t1line:             }
+t1line:         }, 
+t1line:         "RequestID": "req-5310e02d-3d8d-41e7-b8a9-5debcf3c976d"
+t1line:     }
+t1line: }
+t1line: Refer to, jcs --help
+t1stderr=====: t1/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+t1  InsecurePlatformWarning
+t1/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/connectionpool.py:768: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+t1  InsecureRequestWarning)
+
+Waiting for vol cleanup thread to complete
+Waiting for vol cleanup thread to complete
+tnstdout=====: tnline: Exception 400 thrown! Status code:
+tnline: Error content:  {
+tnline:     "Response": {
+tnline:         "Errors": {
+tnline:             "Error": {
+tnline:                 "Code": "UnsupportedOperation", 
+tnline:                 "Message": "The specified request includes an unsupported operation."
+tnline:             }
+tnline:         }, 
+tnline:         "RequestID": "req-c5515ac7-8b76-4db0-a6d2-50079272082f"
+tnline:     }
+tnline: }
+tnline: Refer to, jcs --help
+tnstderr=====: tn/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+tn  InsecurePlatformWarning
+tn/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/connectionpool.py:768: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+tn  InsecureRequestWarning)
+
+Waiting for snap cleanup thread to complete
+Waiting for snap cleanup thread to complete
+tnstdout=====: tnline: '--------------------------------------------------'
+tnline: {
+tnline:     "DeleteSnapshotResponse": {
+tnline:         "@xmlns": "http://compute.jiocloudservices.com/doc/2016-03-01/", 
+tnline:         "requestId": "req-58057a35-f56e-4107-8ec3-57bd29bbf083", 
+tnline:         "return": "true"
+tnline:     }
+tnline: }
+tnline: 
+tnline: 
+tnline: Request successfully executed !
+tnline: '--------------------------------------------------'
+tnstderr=====: tn/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+tn  InsecurePlatformWarning
+tn/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/connectionpool.py:768: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+tn  InsecureRequestWarning)
+
+Current Test run #1 complete; Moving to nexti run, if any
+Current Test all runs complete; Moving to next test, if any
+cmds[o] CreateVolume
+cmds[1] CreateSnapshot
+Waiting for createVolume response to get volumeId
+Waiting for createVolume response to get volumeId
+t0stdout=====: t0line: '--------------------------------------------------'
+t0line: {
+t0line:     "CreateVolumeResponse": {
+t0line:         "@xmlns": "http://compute.jiocloudservices.com/doc/2016-03-01/", 
+t0line:         "attachmentSet": null, 
+t0line:         "createTime": "2016-05-26T10:16:39.128282", 
+t0line:         "requestId": "req-c6de8b6c-0ba3-4c04-8bc2-81dca7fa3450", 
+t0line:         "size": "10", 
+t0line:         "snapshotId": null, 
+t0line:         "status": "creating", 
+t0line:         "volumeId": "6c64e152-e10c-4096-b699-df6f99aa3270"
+t0line:     }
+t0line: }
+t0line: 
+t0line: 
+t0line: Request successfully executed !
+t0line: '--------------------------------------------------'
+t0stderr=====: t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+t0  InsecurePlatformWarning
+t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/connectionpool.py:768: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+t0  InsecureRequestWarning)
+
+volumeId 6c64e152-e10c-4096-b699-df6f99aa3270
+t2stdout=====: t2line: '--------------------------------------------------'
+t2line: {
+t2line:     "CreateSnapshotResponse": {
+t2line:         "@xmlns": "http://compute.jiocloudservices.com/doc/2016-03-01/", 
+t2line:         "requestId": "req-81eba8e3-6eb5-4951-ba19-7bcf7bc6aca7", 
+t2line:         "snapshotId": "319c7f4b-2d92-414f-b681-59f489983824", 
+t2line:         "startTime": "2016-05-26T10:15:33.000000", 
+t2line:         "status": "pending", 
+t2line:         "volumeId": "6c64e152-e10c-4096-b699-df6f99aa3270", 
+t2line:         "volumeSize": "10"
+t2line:     }
+t2line: }
+t2line: 
+t2line: 
+t2line: Request successfully executed !
+t2line: '--------------------------------------------------'
+t2stderr=====: t2/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+t2  InsecurePlatformWarning
+t2/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/connectionpool.py:768: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+t2  InsecureRequestWarning)
+
+Waiting for vol cleanup thread to complete
+Waiting for vol cleanup thread to complete
+tnstdout=====: tnline: Exception 400 thrown! Status code:
+tnline: Error content:  {
+tnline:     "Response": {
+tnline:         "Errors": {
+tnline:             "Error": {
+tnline:                 "Code": "UnsupportedOperation", 
+tnline:                 "Message": "The specified request includes an unsupported operation."
+tnline:             }
+tnline:         }, 
+tnline:         "RequestID": "req-362c48df-6fdf-4881-9a6b-53c302c4177f"
+tnline:     }
+tnline: }
+tnline: Refer to, jcs --help
+tnstderr=====: tn/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+tn  InsecurePlatformWarning
+tn/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/connectionpool.py:768: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+tn  InsecureRequestWarning)
+
+Current Test run #1 complete; Moving to nexti run, if any
+Current Test all runs complete; Moving to next test, if any
+cmds[o] CreateVolume
+cmds[1] CreateSnapshot
+Waiting for createVolume response to get volumeId
+Waiting for createVolume response to get volumeId
+t0stdout=====: t0line: '--------------------------------------------------'
+t0line: {
+t0line:     "CreateVolumeResponse": {
+t0line:         "@xmlns": "http://compute.jiocloudservices.com/doc/2016-03-01/", 
+t0line:         "attachmentSet": null, 
+t0line:         "createTime": "2016-05-26T10:15:37.985202", 
+t0line:         "requestId": "req-d17363ac-a2ac-47a6-861f-baf0544ab127", 
+t0line:         "size": "1", 
+t0line:         "snapshotId": null, 
+t0line:         "status": "creating", 
+t0line:         "volumeId": "ad8a50a0-8070-47f3-adda-ce1c9ad8a743"
+t0line:     }
+t0line: }
+t0line: 
+t0line: 
+t0line: Request successfully executed !
+t0line: '--------------------------------------------------'
+t0stderr=====: t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+t0  InsecurePlatformWarning
+t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/connectionpool.py:768: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+t0  InsecureRequestWarning)
+
+volumeId ad8a50a0-8070-47f3-adda-ce1c9ad8a743
+Waiting for createSnapshot response to get snapshotId
+Waiting for createSnapshot response to get snapshotId
+Waiting for createSnapshot response to get snapshotId
+t0stdout=====: t0line: '--------------------------------------------------'
+t0line: {
+t0line:     "CreateSnapshotResponse": {
+t0line:         "@xmlns": "http://compute.jiocloudservices.com/doc/2016-03-01/", 
+t0line:         "requestId": "req-08c0107c-6432-439c-a320-70fe6607bd82", 
+t0line:         "snapshotId": "02a882da-11bd-488f-9e09-49b490242c80", 
+t0line:         "startTime": "2016-05-26T10:15:40.000000", 
+t0line:         "status": "pending", 
+t0line:         "volumeId": "ad8a50a0-8070-47f3-adda-ce1c9ad8a743", 
+t0line:         "volumeSize": "1"
+t0line:     }
+t0line: }
+t0line: 
+t0line: 
+t0line: Request successfully executed !
+t0line: '--------------------------------------------------'
+t0stderr=====: t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+t0  InsecurePlatformWarning
+t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/connectionpool.py:768: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+t0  InsecureRequestWarning)
+
+snapshotId 02a882da-11bd-488f-9e09-49b490242c80
+Waiting for resource to become available
+Waiting for resource to become available
+t0stdout=====: t0line: '--------------------------------------------------'
+t0line: {
+t0line:     "DescribeSnapshotsResponse": {
+t0line:         "@xmlns": "http://compute.jiocloudservices.com/doc/2016-03-01/", 
+t0line:         "requestId": "req-77512ac9-3d48-4562-84c5-412fb4983371", 
+t0line:         "snapshotSet": {
+t0line:             "item": {
+t0line:                 "snapshotId": "02a882da-11bd-488f-9e09-49b490242c80", 
+t0line:                 "startTime": "2016-05-26T10:15:40.000000", 
+t0line:                 "status": "pending", 
+t0line:                 "volumeId": "ad8a50a0-8070-47f3-adda-ce1c9ad8a743", 
+t0line:                 "volumeSize": "1"
+t0line:             }
+t0line:         }
+t0line:     }
+t0line: }
+t0line: 
+t0line: 
+t0line: Request successfully executed !
+t0line: '--------------------------------------------------'
+t0stderr=====: t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+t0  InsecurePlatformWarning
+t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/connectionpool.py:768: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+t0  InsecureRequestWarning)
+
+status pending
+Waiting for resource to become available
+Waiting for resource to become available
+t0stdout=====: t0line: '--------------------------------------------------'
+t0line: {
+t0line:     "DescribeSnapshotsResponse": {
+t0line:         "@xmlns": "http://compute.jiocloudservices.com/doc/2016-03-01/", 
+t0line:         "requestId": "req-47c1f08b-57e2-4053-8f70-459c17b22b4f", 
+t0line:         "snapshotSet": {
+t0line:             "item": {
+t0line:                 "snapshotId": "02a882da-11bd-488f-9e09-49b490242c80", 
+t0line:                 "startTime": "2016-05-26T10:15:40.000000", 
+t0line:                 "status": "pending", 
+t0line:                 "volumeId": "ad8a50a0-8070-47f3-adda-ce1c9ad8a743", 
+t0line:                 "volumeSize": "1"
+t0line:             }
+t0line:         }
+t0line:     }
+t0line: }
+t0line: 
+t0line: 
+t0line: Request successfully executed !
+t0line: '--------------------------------------------------'
+t0stderr=====: t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+t0  InsecurePlatformWarning
+t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/connectionpool.py:768: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+t0  InsecureRequestWarning)
+
+status pending
+Waiting for resource to become available
+Waiting for resource to become available
+t0stdout=====: t0line: '--------------------------------------------------'
+t0line: {
+t0line:     "DescribeSnapshotsResponse": {
+t0line:         "@xmlns": "http://compute.jiocloudservices.com/doc/2016-03-01/", 
+t0line:         "requestId": "req-4629afaf-03bf-4ea3-95ab-a53251f08b0c", 
+t0line:         "snapshotSet": {
+t0line:             "item": {
+t0line:                 "snapshotId": "02a882da-11bd-488f-9e09-49b490242c80", 
+t0line:                 "startTime": "2016-05-26T10:15:40.000000", 
+t0line:                 "status": "pending", 
+t0line:                 "volumeId": "ad8a50a0-8070-47f3-adda-ce1c9ad8a743", 
+t0line:                 "volumeSize": "1"
+t0line:             }
+t0line:         }
+t0line:     }
+t0line: }
+t0line: 
+t0line: 
+t0line: Request successfully executed !
+t0line: '--------------------------------------------------'
+t0stderr=====: t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+t0  InsecurePlatformWarning
+t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/connectionpool.py:768: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+t0  InsecureRequestWarning)
+
+status pending
+Waiting for resource to become available
+Waiting for resource to become available
+t0stdout=====: t0line: '--------------------------------------------------'
+t0line: {
+t0line:     "DescribeSnapshotsResponse": {
+t0line:         "@xmlns": "http://compute.jiocloudservices.com/doc/2016-03-01/", 
+t0line:         "requestId": "req-eec45827-ccd4-4688-bc69-597354ffc1b5", 
+t0line:         "snapshotSet": {
+t0line:             "item": {
+t0line:                 "snapshotId": "02a882da-11bd-488f-9e09-49b490242c80", 
+t0line:                 "startTime": "2016-05-26T10:15:40.000000", 
+t0line:                 "status": "pending", 
+t0line:                 "volumeId": "ad8a50a0-8070-47f3-adda-ce1c9ad8a743", 
+t0line:                 "volumeSize": "1"
+t0line:             }
+t0line:         }
+t0line:     }
+t0line: }
+t0line: 
+t0line: 
+t0line: Request successfully executed !
+t0line: '--------------------------------------------------'
+t0stderr=====: t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+t0  InsecurePlatformWarning
+t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/connectionpool.py:768: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+t0  InsecureRequestWarning)
+
+status pending
+Waiting for resource to become available
+Waiting for resource to become available
+t0stdout=====: t0line: '--------------------------------------------------'
+t0line: {
+t0line:     "DescribeSnapshotsResponse": {
+t0line:         "@xmlns": "http://compute.jiocloudservices.com/doc/2016-03-01/", 
+t0line:         "requestId": "req-f8e74fd5-b9c8-4b64-bfa0-2bb612cccdd9", 
+t0line:         "snapshotSet": {
+t0line:             "item": {
+t0line:                 "snapshotId": "02a882da-11bd-488f-9e09-49b490242c80", 
+t0line:                 "startTime": "2016-05-26T10:15:49.000000", 
+t0line:                 "status": "completed", 
+t0line:                 "volumeId": "ad8a50a0-8070-47f3-adda-ce1c9ad8a743", 
+t0line:                 "volumeSize": "1"
+t0line:             }
+t0line:         }
+t0line:     }
+t0line: }
+t0line: 
+t0line: 
+t0line: Request successfully executed !
+t0line: '--------------------------------------------------'
+t0stderr=====: t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+t0  InsecurePlatformWarning
+t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/connectionpool.py:768: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+t0  InsecureRequestWarning)
+
+status completed
+Waiting for createVolume response to get volumeId
+Waiting for createVolume response to get volumeId
+Waiting for createVolume response to get volumeId
+Waiting for createVolume response to get volumeId
+t0stdout=====: t0line: '--------------------------------------------------'
+t0line: {
+t0line:     "CreateVolumeResponse": {
+t0line:         "@xmlns": "http://compute.jiocloudservices.com/doc/2016-03-01/", 
+t0line:         "attachmentSet": null, 
+t0line:         "createTime": "2016-05-26T10:17:01.000000", 
+t0line:         "requestId": "req-5a132824-b5ef-48b4-aa54-b2a280a36cc5", 
+t0line:         "size": "1", 
+t0line:         "snapshotId": "02a882da-11bd-488f-9e09-49b490242c80", 
+t0line:         "status": "creating", 
+t0line:         "volumeId": "eb77c7aa-f31c-4079-89de-d816f9ebd6dc"
+t0line:     }
+t0line: }
+t0line: 
+t0line: 
+t0line: Request successfully executed !
+t0line: '--------------------------------------------------'
+t0stderr=====: t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+t0  InsecurePlatformWarning
+t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/connectionpool.py:768: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+t0  InsecureRequestWarning)
+
+volumeId eb77c7aa-f31c-4079-89de-d816f9ebd6dc
+t2stdout=====: t2line: Exception 400 thrown! Status code:
+t2line: Error content:  {
+t2line:     "Response": {
+t2line:         "Errors": {
+t2line:             "Error": {
+t2line:                 "Code": "IncorrectState", 
+t2line:                 "Message": "The resource is in incorrect state for the request - reason: ''eb77c7aa-f31c-4079-89de-d816f9ebd6dc' is not in a state where snapshots are allowed.'"
+t2line:             }
+t2line:         }, 
+t2line:         "RequestID": "req-03f5a9d5-86d0-4b70-bb81-ba74d77a0183"
+t2line:     }
+t2line: }
+t2line: Refer to, jcs --help
+t2stderr=====: t2/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+t2  InsecurePlatformWarning
+t2/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/connectionpool.py:768: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+t2  InsecureRequestWarning)
+
+Waiting for vol cleanup thread to complete
+Waiting for vol cleanup thread to complete
+tnstdout=====: tnline: '--------------------------------------------------'
+tnline: {
+tnline:     "DeleteVolumeResponse": {
+tnline:         "@xmlns": "http://compute.jiocloudservices.com/doc/2016-03-01/", 
+tnline:         "requestId": "req-882a34cf-aae6-4519-8f31-4ab39ac28389", 
+tnline:         "return": "true"
+tnline:     }
+tnline: }
+tnline: 
+tnline: 
+tnline: Request successfully executed !
+tnline: '--------------------------------------------------'
+tnstderr=====: tn/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+tn  InsecurePlatformWarning
+tn/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/connectionpool.py:768: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+tn  InsecureRequestWarning)
+
+Waiting for snap cleanup thread to complete
+Waiting for snap cleanup thread to complete
+tnstdout=====: tnline: '--------------------------------------------------'
+tnline: {
+tnline:     "DeleteSnapshotResponse": {
+tnline:         "@xmlns": "http://compute.jiocloudservices.com/doc/2016-03-01/", 
+tnline:         "requestId": "req-bde6ec7f-2517-40fc-a628-3495951a682c", 
+tnline:         "return": "true"
+tnline:     }
+tnline: }
+tnline: 
+tnline: 
+tnline: Request successfully executed !
+tnline: '--------------------------------------------------'
+tnstderr=====: tn/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+tn  InsecurePlatformWarning
+tn/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/connectionpool.py:768: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+tn  InsecureRequestWarning)
+
+Current Test run #1 complete; Moving to nexti run, if any
+Current Test all runs complete; Moving to next test, if any
+cmds[o] CreateSnapshot
+cmds[1] CreateSnapshot
+Waiting for createVolume response to get volumeId
+Waiting for createVolume response to get volumeId
+t0stdout=====: t0line: '--------------------------------------------------'
+t0line: {
+t0line:     "CreateVolumeResponse": {
+t0line:         "@xmlns": "http://compute.jiocloudservices.com/doc/2016-03-01/", 
+t0line:         "attachmentSet": null, 
+t0line:         "createTime": "2016-05-26T10:17:12.086937", 
+t0line:         "requestId": "req-59e29148-d2c1-48e7-8de0-0db6e057de45", 
+t0line:         "size": "1", 
+t0line:         "snapshotId": null, 
+t0line:         "status": "creating", 
+t0line:         "volumeId": "5372c4ee-5aa8-4ef2-98cf-24be15575275"
+t0line:     }
+t0line: }
+t0line: 
+t0line: 
+t0line: Request successfully executed !
+t0line: '--------------------------------------------------'
+t0stderr=====: t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+t0  InsecurePlatformWarning
+t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/connectionpool.py:768: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+t0  InsecureRequestWarning)
+
+volumeId 5372c4ee-5aa8-4ef2-98cf-24be15575275
+Waiting for resource to become available
+Waiting for resource to become available
+t0stdout=====: t0line: '--------------------------------------------------'
+t0line: {
+t0line:     "DescribeVolumesResponse": {
+t0line:         "@xmlns": "http://compute.jiocloudservices.com/doc/2016-03-01/", 
+t0line:         "requestId": "req-89863a67-a7f9-446b-a95b-6167840282df", 
+t0line:         "volumeSet": {
+t0line:             "item": {
+t0line:                 "attachmentSet": null, 
+t0line:                 "createTime": "2016-05-26T10:17:12.000000", 
+t0line:                 "size": "1", 
+t0line:                 "snapshotId": null, 
+t0line:                 "status": "available", 
+t0line:                 "volumeId": "5372c4ee-5aa8-4ef2-98cf-24be15575275"
+t0line:             }
+t0line:         }
+t0line:     }
+t0line: }
+t0line: 
+t0line: 
+t0line: Request successfully executed !
+t0line: '--------------------------------------------------'
+t0stderr=====: t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+t0  InsecurePlatformWarning
+t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/connectionpool.py:768: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+t0  InsecureRequestWarning)
+
+status available
+t2stdout=====: t2line: '--------------------------------------------------'
+t2line: {
+t2line:     "CreateSnapshotResponse": {
+t2line:         "@xmlns": "http://compute.jiocloudservices.com/doc/2016-03-01/", 
+t2line:         "requestId": "req-3b7bae4f-b9d4-4fd4-85e5-d99f1b11a553", 
+t2line:         "snapshotId": "7478e507-5773-42a2-ab45-c64007a4c7a0", 
+t2line:         "startTime": "2016-05-26T10:16:08.000000", 
+t2line:         "status": "pending", 
+t2line:         "volumeId": "5372c4ee-5aa8-4ef2-98cf-24be15575275", 
+t2line:         "volumeSize": "1"
+t2line:     }
+t2line: }
+t2line: 
+t2line: 
+t2line: Request successfully executed !
+t2line: '--------------------------------------------------'
+t2stderr=====: t2/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+t2  InsecurePlatformWarning
+t2/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/connectionpool.py:768: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+t2  InsecureRequestWarning)
+
+t1stdout=====: t1line: '--------------------------------------------------'
+t1line: {
+t1line:     "CreateSnapshotResponse": {
+t1line:         "@xmlns": "http://compute.jiocloudservices.com/doc/2016-03-01/", 
+t1line:         "requestId": "req-d407dcbf-e748-4991-93d7-f61a9578e90d", 
+t1line:         "snapshotId": "b4a76eca-e3c6-4fc4-b5be-53b6f48877b1", 
+t1line:         "startTime": "2016-05-26T10:16:08.000000", 
+t1line:         "status": "pending", 
+t1line:         "volumeId": "5372c4ee-5aa8-4ef2-98cf-24be15575275", 
+t1line:         "volumeSize": "1"
+t1line:     }
+t1line: }
+t1line: 
+t1line: 
+t1line: Request successfully executed !
+t1line: '--------------------------------------------------'
+t1stderr=====: t1/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+t1  InsecurePlatformWarning
+t1/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/connectionpool.py:768: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+t1  InsecureRequestWarning)
+
+Waiting for vol cleanup thread to complete
+Waiting for vol cleanup thread to complete
+tnstdout=====: tnline: Exception 400 thrown! Status code:
+tnline: Error content:  {
+tnline:     "Response": {
+tnline:         "Errors": {
+tnline:             "Error": {
+tnline:                 "Code": "UnsupportedOperation", 
+tnline:                 "Message": "The specified request includes an unsupported operation."
+tnline:             }
+tnline:         }, 
+tnline:         "RequestID": "req-a921b1e8-c565-4128-968d-db49030b31cf"
+tnline:     }
+tnline: }
+tnline: Refer to, jcs --help
+tnstderr=====: tn/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+tn  InsecurePlatformWarning
+tn/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/connectionpool.py:768: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+tn  InsecureRequestWarning)
+
+Current Test run #1 complete; Moving to nexti run, if any
+Current Test all runs complete; Moving to next test, if any
+cmds[o] CreateSnapshot
+cmds[1] DeleteVolume
+Waiting for createVolume response to get volumeId
+Waiting for createVolume response to get volumeId
+t0stdout=====: t0line: '--------------------------------------------------'
+t0line: {
+t0line:     "CreateVolumeResponse": {
+t0line:         "@xmlns": "http://compute.jiocloudservices.com/doc/2016-03-01/", 
+t0line:         "attachmentSet": null, 
+t0line:         "createTime": "2016-05-26T10:17:21.343343", 
+t0line:         "requestId": "req-93e24f2f-1e7a-4503-a7bc-0458b7caf56e", 
+t0line:         "size": "1", 
+t0line:         "snapshotId": null, 
+t0line:         "status": "creating", 
+t0line:         "volumeId": "4f62e4cd-e734-4151-8e33-ffe35beb37c1"
+t0line:     }
+t0line: }
+t0line: 
+t0line: 
+t0line: Request successfully executed !
+t0line: '--------------------------------------------------'
+t0stderr=====: t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+t0  InsecurePlatformWarning
+t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/connectionpool.py:768: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+t0  InsecureRequestWarning)
+
+volumeId 4f62e4cd-e734-4151-8e33-ffe35beb37c1
+Waiting for resource to become available
+Waiting for resource to become available
+t0stdout=====: t0line: '--------------------------------------------------'
+t0line: {
+t0line:     "DescribeVolumesResponse": {
+t0line:         "@xmlns": "http://compute.jiocloudservices.com/doc/2016-03-01/", 
+t0line:         "requestId": "req-818038b4-dfbc-4a8b-b3da-9cbe27b97b2a", 
+t0line:         "volumeSet": {
+t0line:             "item": {
+t0line:                 "attachmentSet": null, 
+t0line:                 "createTime": "2016-05-26T10:17:21.000000", 
+t0line:                 "size": "1", 
+t0line:                 "snapshotId": null, 
+t0line:                 "status": "available", 
+t0line:                 "volumeId": "4f62e4cd-e734-4151-8e33-ffe35beb37c1"
+t0line:             }
+t0line:         }
+t0line:     }
+t0line: }
+t0line: 
+t0line: 
+t0line: Request successfully executed !
+t0line: '--------------------------------------------------'
+t0stderr=====: t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+t0  InsecurePlatformWarning
+t0/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/connectionpool.py:768: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+t0  InsecureRequestWarning)
+
+status available
+t2stdout=====: t2line: '--------------------------------------------------'
+t2line: {
+t2line:     "DeleteVolumeResponse": {
+t2line:         "@xmlns": "http://compute.jiocloudservices.com/doc/2016-03-01/", 
+t2line:         "requestId": "req-8666f5f1-058e-47ff-8bfd-c8b137bb3f1f", 
+t2line:         "return": "true"
+t2line:     }
+t2line: }
+t2line: 
+t2line: 
+t2line: Request successfully executed !
+t2line: '--------------------------------------------------'
+t2stderr=====: t2/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+t2  InsecurePlatformWarning
+t2/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/connectionpool.py:768: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+t2  InsecureRequestWarning)
+
+t1stdout=====: t1line: Exception 400 thrown! Status code:
+t1line: Error content:  {
+t1line:     "Response": {
+t1line:         "Errors": {
+t1line:             "Error": {
+t1line:                 "Code": "IncorrectState", 
+t1line:                 "Message": "The resource is in incorrect state for the request - reason: ''4f62e4cd-e734-4151-8e33-ffe35beb37c1' is not in a state where snapshots are allowed.'"
+t1line:             }
+t1line:         }, 
+t1line:         "RequestID": "req-324e43f0-eea9-4774-8d12-76177ccdfd9f"
+t1line:     }
+t1line: }
+t1line: Refer to, jcs --help
+t1stderr=====: t1/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+t1  InsecurePlatformWarning
+t1/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/connectionpool.py:768: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+t1  InsecureRequestWarning)
+
+Waiting for vol cleanup thread to complete
+Waiting for vol cleanup thread to complete
+tnstdout=====: tnline: Exception 404 thrown! Status code:
+tnline: Error content:  {
+tnline:     "Response": {
+tnline:         "Errors": {
+tnline:             "Error": {
+tnline:                 "Code": "InvalidVolume.NotFound", 
+tnline:                 "Message": "The volume '4f62e4cd-e734-4151-8e33-ffe35beb37c1' does not exist."
+tnline:             }
+tnline:         }, 
+tnline:         "RequestID": "req-8f2e0752-cc85-47db-8ebf-fca91d47088c"
+tnline:     }
+tnline: }
+tnline: Refer to, jcs --help
+tnstderr=====: tn/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+tn  InsecurePlatformWarning
+tn/usr/local/lib/python2.7/dist-packages/requests/packages/urllib3/connectionpool.py:768: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+tn  InsecureRequestWarning)
+
+Current Test run #1 complete; Moving to nexti run, if any
+Current Test all runs complete; Moving to next test, if any
