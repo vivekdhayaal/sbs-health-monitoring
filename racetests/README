@@ -9,8 +9,9 @@ Steps:
 
 * RaceTestRunner.java file reads the test cases from racetestcases.txt file and runs them.
 Each line should contain the pair of tests that you want to run racily.
-As part of the setup for each pair, a volume is created(status became 'available') and then the pair of tests in each line are run in quick succession to simulate a race.
-As part of cleanup for each pair, volumes and snapshots are deleted.
+As part of the setup for each pair, a volume is created(status became 'available') and if need be instance is created and volume is attached to it.
+Then the pair of tests in each line are run in quick succession to simulate a race.
+As part of cleanup for each pair, instances, volumes and snapshots are deleted.
 
 * The first line of the file should contain the size of the volume to be created during setup, and the number of times you want the test-pair to be repeated. This count helps in repetition as races aren't easily reproduced in a run or two.
 
@@ -24,8 +25,5 @@ Below are the supported operations for this test runner:
 2)CreateVolume from snapshot
 3)CreateSnapshot
 4)DeleteVolume
-
-Yet to be supported:
-1)AttachVolume
-2)DetachVolume
-
+5)AttachVolume
+6)DetachVolume

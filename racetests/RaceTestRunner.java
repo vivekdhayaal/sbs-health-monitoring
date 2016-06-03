@@ -50,6 +50,7 @@ class Race extends Thread
 
 class Test
 {
+   private String instanceId = null;
    private String volumeId = null;
    private String snapshotId = null;
    private String size;
@@ -79,7 +80,7 @@ class Test
      return size;
    }
 
-   public void waitForResourceAvailability(String cmd, String expected)
+   public void waitForResourceAvailability(String cmd, String expected, String statusHolder)
    {
      String status = "";
      //String expected = "available";
@@ -100,14 +101,19 @@ class Test
          System.out.println("Main thread interrupted");
        }
        String s = race0.getSb();
-       String[] v = s.split("\"status\": \"");
+       String[] v = s.split("\"" + statusHolder + "\": \"");
        v = v[1].split("\"");
        System.out.println("status " + v[0]);
        status = v[0];
      }
    }
 
-   public String createVolume(String param)
+   public void waitForResourceAvailability(String cmd, String expected)
+   {
+     waitForResourceAvailability(cmd, expected, "status");
+   }
+
+   public Race createVolume(String param)
    {
      String cmd;
      if (!(param == null))
@@ -135,7 +141,7 @@ class Test
      v = v[1].split("\"");
      System.out.println("volumeId " + v[0]);
      this.volumeId = v[0];
-     return this.volumeId;
+     return race0;
    }
 
    public String createSnapshot()
@@ -171,6 +177,78 @@ class Test
      String cmd = "jcs compute DescribeVolumes --VolumeId " + this.volumeId;
      waitForResourceAvailability(cmd, "available");
      return this.volumeId;
+   }
+
+   public Race attachVolume()
+   {
+     String cmd = "jcs compute AttachVolume --InstanceId " + this.instanceId + " --VolumeId " + this.volumeId + " --Device /dev/vdb";
+     System.out.println("vivek=======================" + cmd);
+     Race race0 = new Race("t0", cmd, 0);
+     race0.start();
+     return race0;
+   }
+
+   public String attachVolumeAvailable()
+   {
+     attachVolume();
+     String cmd = "jcs compute DescribeVolumes --VolumeId " + this.volumeId;
+     waitForResourceAvailability(cmd, "in-use");
+     return this.volumeId;
+   }
+
+   public Race detachVolume()
+   {
+     String cmd = "jcs compute DetachVolume --InstanceId " + this.instanceId + " --VolumeId " + this.volumeId;
+     Race race0 = new Race("t0", cmd, 0);
+     race0.start();
+     return race0;
+   }
+
+   public String createInstance()
+   {
+     String cmd = "jcs compute RunInstances --ImageId jmi-d523af5f --KeyName vivek_key --InstanceTypeId c1.medium --BlockDeviceMapping.1.DeleteOnTermination True --BlockDeviceMapping.1.DeviceName /dev/vda";
+     Race race0 = new Race("t0", cmd, 0);
+     race0.start();
+     try
+     {
+        while(race0.isAlive())
+        {
+          System.out.println("Waiting for createInstance response to get instanceId");
+          Thread.sleep(1000);
+        }
+     }
+     catch(InterruptedException e)
+     {
+       System.out.println("Main thread interrupted");
+     }
+     String s = race0.getSb();
+     String v[] = s.split("\"instanceId\": \"");
+     v = v[1].split("\"");
+     System.out.println("instanceId " + v[0]);
+     this.instanceId = v[0];
+     cmd = "jcs compute DescribeInstances --InstanceId.1 " + this.instanceId;
+     waitForResourceAvailability(cmd, "running", "instanceState");
+     return this.instanceId;
+   }
+
+   public Race runCmd(String op, String testNum)
+   {
+     String av = "AttachVolume";
+     String dv = "DetachVolume";
+     Race race = null;
+     if (op.equals(av))
+     {
+       race = attachVolume();
+     } else if (op.equals(dv))
+     {
+       race = detachVolume();
+     } else 
+     {
+       String cmd = "jcs compute " + op + " --VolumeId " + this.volumeId;
+       race = new Race("t" + testNum, cmd, 100);
+       race.start();
+     }
+     return race;
    }
 
    public void cleanup()
@@ -210,6 +288,25 @@ class Test
        }
        this.snapshotId = null;
      }
+     if (!(this.instanceId == null))
+     {
+       cmd = "jcs compute TerminateInstances --InstanceId.1 " + this.instanceId;
+       race0 = new Race("tn", cmd, 0);
+       race0.start();
+       try
+       {
+          while(race0.isAlive())
+          {
+            System.out.println("Waiting for inst cleanup thread to complete");
+            Thread.sleep(1000);
+          }
+       }
+       catch(InterruptedException e)
+       {
+         System.out.println("Main thread interrupted");
+       }
+       this.instanceId = null;
+     }
    }
 }
 
@@ -239,68 +336,50 @@ class RaceTestRunner
             }
             for (int i = 0; i < count; i++) {
               String cv = "CreateVolume";
+              String av = "AttachVolume";
+              String dv = "DetachVolume";
+              Race race1 = null;
+              Race race2 = null;
+              if (cmds[0].equals(av) || cmds[1].equals(av) || cmds[0].equals(dv) || cmds[1].equals(dv))
+              {
+                // we need insgtance for attach/detach ops
+                test.createInstance();
+              }
               if (cmds[0].equals(cv))
               {
                 String nextCmd = cmds[1];
-                // we need the volumeId to run the next command
-                volumeId = test.createVolume(size);
-                cmd = "jcs compute " + nextCmd + " --VolumeId " + volumeId;
-                Race race2 = new Race("t2", cmd, 100);
-                race2.start();
-                try
-                {
-                   while(race2.isAlive())
-                   {
-                     //System.out.println("Main thread will be alive till the child thread is live");
-                     Thread.sleep(1500);
-                   }
-                }
-                catch(InterruptedException e)
-                {
-                  System.out.println("Main thread interrupted");
-                }
+                // we need the volume created to run the next command
+                race1 = test.createVolume(size);
+                race2 = test.runCmd(nextCmd, "2");
               } else if (cmds[1].equals(cv))
               {
                 String nextCmd = cmds[0];
-                // we need the volumeId to run the next command
-                volumeId = test.createVolume(size);
-                cmd = "jcs compute " + nextCmd + " --VolumeId " + volumeId;
-                Race race2 = new Race("t2", cmd, 100);
-                race2.start();
-                try
-                {
-                   while(race2.isAlive())
-                   {
-                     //System.out.println("Main thread will be alive till the child thread is live");
-                     Thread.sleep(1500);
-                   }
-                }
-                catch(InterruptedException e)
-                {
-                  System.out.println("Main thread interrupted");
-                }
+                // we need the volume created to run the next command
+                race1 = test.createVolume(size);
+                race2 = test.runCmd(nextCmd, "2");
               } else {
                 // create the resource ourselves and...
-                volumeId = test.createVolumeAvailable(size);
+                test.createVolumeAvailable(size);
+                if ((cmds[0].equals(dv) || cmds[1].equals(dv)) && (!(cmds[0].equals(av)) || !(cmds[1].equals(dv))))
+                {
+                  // the pair should be DetachVolume/DeleteVolume so attached volume is a prerequisite
+                  test.attachVolumeAvailable();
+                }
                 // ..start the two commands in the given order
-                cmd = "jcs compute " + cmds[0] + " --VolumeId " + volumeId;
-                Race race = new Race("t1", cmd, 100);
-                cmd = "jcs compute " + cmds[1] + " --VolumeId " + volumeId;
-                Race race2 = new Race("t2", cmd, 100);
-                race.start();
-                race2.start();
-                try
-                {
-                   while(race.isAlive() || race2.isAlive())
-                   {
-                     //System.out.println("Main thread will be alive till the child thread is live");
-                     Thread.sleep(1500);
-                   }
-                }
-                catch(InterruptedException e)
-                {
-                  System.out.println("Main thread interrupted");
-                }
+                race1 = test.runCmd(cmds[0], "1");
+                race2 = test.runCmd(cmds[1], "2");
+              }
+              try
+              {
+                 while(race1.isAlive() || race2.isAlive())
+                 {
+                   //System.out.println("Main thread will be alive till the child thread is live");
+                   Thread.sleep(1500);
+                 }
+              }
+              catch(InterruptedException e)
+              {
+                System.out.println("Main thread interrupted");
               }
               test.cleanup();
               // reset size to default size
