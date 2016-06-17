@@ -550,7 +550,7 @@ class RaceTestRunner
                   // create the second instance
                   test.createInstanceAvailable();
                   List<String> instances = test.getAllInstances();
-                  for (int j = 0; j <= 1; i++)
+                  for (int j = 0; j <= 1; j++)
                   {
                     switch (cmds[j])
                     {
