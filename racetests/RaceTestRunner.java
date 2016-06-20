@@ -400,46 +400,67 @@ class Test
      this.snapshotId = null;
      this.allSnapshots = new ArrayList<String>();
      String volumeId = null;
+     String success = "";
+     String message = "";
+     String errorMessage1 = "Volume cannot be deleted while in attached state";
+     String errorMessage2 = "Volume status must be available or error, but current status is: attaching.";
      String status = "";
      String code = "";
      String instanceId = null;
      for(int index=0; index < this.allVolumes.size(); index++)
      {
        volumeId = this.allVolumes.get(index);
-       cmd = this.descVolCmd + volumeId;
+       cmd = this.deleteVolCmd + volumeId;
        race0 = new Race("tn", cmd, 0);
        race0.start();
-       System.out.println("Checking if the volume is attached, to detach");
+       System.out.println("Attempted delete volume");
        waitForThreadCompletion(race0);
        try
        {
-         status = getResourceAttr(race0.getSb(), "status");
+         success = getResourceAttr(race0.getSb(), "return");
        } catch (ResourceUnavailableException e)
        {
          //"Code": "InvalidVolume.NotFound"
          code = getResourceAttr(race0.getSb(), "Code");
+         message = getResourceAttr(race0.getSb(), "Message");
        }
-       if (status.equals("in-use") || status.equals("attaching"))
+       if (success.equals("true"))
        {
-         System.out.println("Attempting to detach volume");
-         instanceId = getResourceAttr(race0.getSb(), "instanceId");
-         cmd = this.detachVolCmd + "--InstanceId " + instanceId + " --VolumeId " + volumeId;
-         // we could end up issuing a detach during a state-transitional phase
-         // so lets keep retrying until MAX_RETRIES to detach.
-         try
-         {
-           waitForExpected("n", cmd, "detaching", "status", true);
-         } catch (ResourceUnavailableException e)
-         {
-           e.printStackTrace();  
-           System.out.println("Unable to detach vol " + volumeId + " after " + this.MAX_RETRIES + " attempts. Try manually");
-         }
-       }
-       if (code.equals("InvalidVolume.NotFound"))
+         System.out.println("Volume successfully deleted...");
+       } else if (code.equals("InvalidVolume.NotFound"))
        {
          System.out.println("Volume already deleted; moving on...");
-       } else 
+       } else  if (message.equals(errorMessage1) || message.equals(errorMessage2))
        {
+         cmd = this.descVolCmd + volumeId;
+         race0 = new Race("tn", cmd, 0);
+         race0.start();
+         System.out.println("Checking if the volume is attached, to detach");
+         waitForThreadCompletion(race0);
+         try
+         {
+           status = getResourceAttr(race0.getSb(), "status");
+         } catch (ResourceUnavailableException e)
+         {
+           //"Code": "InvalidVolume.NotFound"
+           code = getResourceAttr(race0.getSb(), "Code");
+         }
+         if (status.equals("in-use") || status.equals("attaching"))
+         {
+           System.out.println("Attempting to detach volume");
+           instanceId = getResourceAttr(race0.getSb(), "instanceId");
+           cmd = this.detachVolCmd + "--InstanceId " + instanceId + " --VolumeId " + volumeId;
+           // we could end up issuing a detach during a state-transitional phase
+           // so lets keep retrying until MAX_RETRIES to detach.
+           try
+           {
+             waitForExpected("n", cmd, "detaching", "status", true);
+           } catch (ResourceUnavailableException e)
+           {
+             e.printStackTrace();  
+             System.out.println("Unable to detach vol " + volumeId + " after " + this.MAX_RETRIES + " attempts. Try manually");
+           }
+         }
          cmd = this.deleteVolCmd + volumeId;
          System.out.println("Attempting to delete volume");
          // we could end up issuing a delete during a state-transitional phase
@@ -550,14 +571,22 @@ class RaceTestRunner
                   // create the second instance
                   test.createInstanceAvailable();
                   List<String> instances = test.getAllInstances();
+                  Race race = null;
                   for (int j = 0; j <= 1; j++)
                   {
                     switch (cmds[j])
                     {
-                      case "AttachVolume": race1 = test.attachVolume(Integer.toString(j+1), instances.get(j));
+                      case "AttachVolume": race = test.attachVolume(Integer.toString(j+1), instances.get(j));
                                            break;
-                      case "DetachVolume": race2 = test.detachVolume(Integer.toString(j+1), instances.get(j));
+                      case "DetachVolume": race = test.detachVolume(Integer.toString(j+1), instances.get(j));
                                            break;
+                    }
+                    if (j == 0)
+                    {
+                      race1 = race;
+                    } else
+                    {
+                      race2 = race;
                     }
                   }
                 } else
